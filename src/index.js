@@ -1,0 +1,31 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import './tailwind.generated.css';
+
+import { createBrowserHistory } from 'history'
+
+import {
+  Router,
+  Route,
+  Switch
+} from 'react-router-dom'
+
+
+import Home from './components/Home'
+
+
+const customHistory = createBrowserHistory()
+
+const routing = ( 
+  <Router history={customHistory}>
+    <Navbar history={customHistory}></Navbar>
+      <Switch>
+            <Route exact path="/" component={Home} />
+            {/*<Route exact sensitive path="/Recettes" component={Recettes} />*/}
+          </Switch>
+  </Router>
+)
+
+ReactDOM.render(routing, document.getElementById('root'))
+
