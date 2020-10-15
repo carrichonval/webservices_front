@@ -19,7 +19,6 @@ const customHistory = createBrowserHistory()
 
 const routing = ( 
   <Router history={customHistory}>
-    <Navbar history={customHistory}></Navbar>
       <Switch>
             <Route exact path="/" component={Home} />
             {/*<Route exact sensitive path="/Recettes" component={Recettes} />*/}
