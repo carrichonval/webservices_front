@@ -1,8 +1,9 @@
-import React, { useState,useEffect } from 'react';
+import React, {useState,useEffect} from 'react';
 
 
 export default function Home (){
 
+    const fetch=0
     const [sports,setSports] = useState([])
 
 
@@ -10,8 +11,8 @@ export default function Home (){
         fetch("https://api.valentincarrichon.fr/sports/",{
             method:'GET',
             headers:{
-                "Content-Type":"application/json",
-            },
+                "Content-Type":"application/json"
+            }
         })
         .then((response)=>{
             return response.json()
