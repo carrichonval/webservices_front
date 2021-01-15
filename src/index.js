@@ -13,15 +13,24 @@ import {
 
 
 import Home from './components/Home'
+import Login from './components/Login';
+import Signup from './components/Signup';
+import PrivateRoute from './components/SpecialRoutes/PrivateRoute'
+import AdminRoute from './components/SpecialRoutes/AdminRoute'
+import Header from './components/Header';
 
 
 const customHistory = createBrowserHistory()
 
 const routing = ( 
   <Router history={customHistory}>
+    <Header/>
       <Switch>
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
+
             <Route exact path="/" component={Home} />
-            {/*<Route exact sensitive path="/Recettes" component={Recettes} />*/}
+
           </Switch>
   </Router>
 )
