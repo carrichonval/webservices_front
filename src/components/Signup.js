@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import {isAuthenticated} from './functions/auth'
-
+import Select from 'react-select';
+import lodash from 'lodash'
 
 
 export default function Signup (props) {
@@ -14,7 +15,7 @@ export default function Signup (props) {
             "tel_number": "",
             "age": 0,
             "address": "",
-            "city_id": 0,
+            "city_id": 1,
             "astrologicalsign_id": 0
         }
     )
@@ -34,7 +35,7 @@ export default function Signup (props) {
     },[])
 
     useEffect(()=>{
-       console.log(user)
+       console.log("User",user)
     },[user])
 
     function isValidEmail(emailAddress) {
@@ -57,6 +58,10 @@ export default function Signup (props) {
         })
         .then((json) => {
             console.log(json)
+            lodash.forEach(json,(city)=>{
+                city.value = city.id
+                city.label = city.name
+            })
             setCities(json)
         })
         .catch((error) => {
@@ -79,6 +84,10 @@ export default function Signup (props) {
         })
         .then((json) => {
             console.log(json)
+            lodash.forEach(json,(astro)=>{
+                astro.value = astro.id
+                astro.label = astro.name
+            })
             setAstrologicalSigns(json)
         })
         .catch((error) => {
@@ -271,14 +280,11 @@ export default function Signup (props) {
                                     City
                                 </label>
                                 <div className="mt-1 rounded-md shadow-sm">
-                                        <select value={user.city_id} id="city" onChange={(e)=>setUser({...user,city_id:e.target.value})} className="mt-1 form-select block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 outline-none transition duration-150 ease-in-out sm:text-sm sm:leading-5">
-                                            <option disabled value={0} >Choisir une ville..</option>
-                                            {cities.map((city,i)=>{
-                                                return (
-                                                    <option key={i} value={city.id}>{city.name}</option>
-                                                )
-                                            })}
-                                        </select>       
+                                       <Select
+                                            options={cities}
+                                            onChange = {(e)=>setUser({...user,city_id:e.value})}
+                                            placeholder="Choisir une ville"
+                                        />    
                                 </div>
                             </div>
                             <div>
@@ -286,14 +292,11 @@ export default function Signup (props) {
                                     Astrological sign
                                 </label>
                                 <div className="mt-1 rounded-md shadow-sm">
-                                    <select value={user.astrologicalsign_id} id="astrological_sign" onChange={(e)=>setUser({...user,astrologicalsign_id:e.target.value})}  className="mt-1 form-select block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 outline-none transition duration-150 ease-in-out sm:text-sm sm:leading-5">
-                                        <option disabled value={0} >Choisir son signe astrologique..</option>
-                                        {astrologicalSigns.map((astro,i)=>{
-                                                return (
-                                                    <option key={i} value={astro.id}>{astro.name}</option>
-                                                )
-                                            })}
-                                    </select>       
+                                        <Select
+                                            options={astrologicalSigns}
+                                            onChange = {(e)=>setUser({...user,astrologicalsign_id:e.value})}
+                                            placeholder="Choisir son signe astrologique"
+                                        />        
                                 </div>
                             </div>
                             <div className="mt-6">
