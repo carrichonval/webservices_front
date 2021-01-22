@@ -70,8 +70,8 @@ export default function Animals (props) {
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
                         Compatibility
                     </h3>
-                    <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
-                        <div className="bg-white overflow-hidden shadow rounded-lg col-start-3">
+                    <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3 lg:grid-cols-5">
+                        <div className="bg-white overflow-hidden shadow rounded-lg sm:col-start-2 lg:col-start-3">
                             <div className="px-4 py-5 sm:p-6">
                                 <dl>
                                     <dt className="text-sm text-center leading-5 font-medium text-black truncate">
@@ -83,8 +83,8 @@ export default function Animals (props) {
                     </div>
     
     
-                    <div className="mt-12 flex flex-row  justify-center">
-                        <div className="bg-white overflow-hidden shadow rounded-lg col-start-2 w-1/5 mt-8 bg-gray-500">
+                    <div className=" hidden sm:flex mt-12 flex-col sm:flex-row  justify-center">
+                        <div className="bg-white overflow-hidden shadow rounded-lg col-start-2 w-full sm:w-1/5 sm:mt-8 bg-gray-500">
                             <div className="px-4 py-5 sm:p-6">
                                 <dl>
                                     <dt className="text-sm text-center leading-5 font-medium text-black truncate">
@@ -96,7 +96,7 @@ export default function Animals (props) {
                                 </dl>
                             </div>
                         </div>
-                        <div className="bg-white overflow-hidden shadow rounded-lg  w-1/5 bg-yellow-500">
+                        <div className="bg-white overflow-hidden shadow rounded-lg  w-full sm:w-1/5 bg-yellow-500">
                             <div className="px-4 py-5 sm:p-6">
                                 <dl>
                                     <dt className="text-sm text-center leading-5 font-medium text-black truncate">
@@ -108,7 +108,7 @@ export default function Animals (props) {
                                 </dl>
                             </div>
                         </div>
-                        <div className="bg-white overflow-hidden shadow rounded-lg  w-1/5 mt-12 bg-red-900">
+                        <div className="bg-white overflow-hidden shadow rounded-lg  w-full sm:w-1/5 sm:mt-12 bg-red-900">
                             <div className="px-4 py-5 sm:p-6">
                                 <dl>
                                 <dt className="text-sm text-center leading-5 font-medium text-black truncate">
@@ -117,7 +117,46 @@ export default function Animals (props) {
                                     <dd className="mt-1 text-center text-sm leading-9 font-semibold text-gray-900">
                                         Score : {compatibility[2].score}
                                     </dd>
-                                    
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className=" sm:hidden mt-12 flex flex-col sm:flex-row  justify-center">
+                        <div className="bg-white overflow-hidden shadow rounded-lg  w-full sm:w-1/5 bg-yellow-500">
+                            <div className="px-4 py-5 sm:p-6">
+                                <dl>
+                                    <dt className="text-sm text-center leading-5 font-medium text-black truncate">
+                                        {compatibility[0].user.first_name} {compatibility[0].user.last_name}  
+                                    </dt>
+                                    <dd className="mt-1 text-center text-sm leading-9 font-semibold text-gray-900">
+                                        Score : {compatibility[0].score}
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div className="bg-white overflow-hidden shadow rounded-lg col-start-2 w-full sm:w-1/5 sm:mt-8 bg-gray-500">
+                            <div className="px-4 py-5 sm:p-6">
+                                <dl>
+                                    <dt className="text-sm text-center leading-5 font-medium text-black truncate">
+                                        {compatibility[1].user.first_name} {compatibility[1].user.last_name}  
+                                    </dt>
+                                    <dd className="mt-1 text-center text-sm leading-9 font-semibold text-gray-900">
+                                        Score : {compatibility[1].score}
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        
+                        <div className="bg-white overflow-hidden shadow rounded-lg  w-full sm:w-1/5 sm:mt-12 bg-red-900">
+                            <div className="px-4 py-5 sm:p-6">
+                                <dl>
+                                <dt className="text-sm text-center leading-5 font-medium text-black truncate">
+                                        {compatibility[2].user.first_name} {compatibility[2].user.last_name}  
+                                    </dt>
+                                    <dd className="mt-1 text-center text-sm leading-9 font-semibold text-gray-900">
+                                        Score : {compatibility[2].score}
+                                    </dd>
                                 </dl>
                             </div>
                         </div>
