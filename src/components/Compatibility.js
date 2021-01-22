@@ -123,7 +123,10 @@ export default function Animals (props) {
                         </div>
                     </div>
     
-                    <div className="mt-24 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
+                    <h3 className="mt-24 text-lg leading-6 font-medium text-gray-900">
+                        Autres
+                    </h3>
+                    <div className="mt-4 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
                         {compatibility.map((c,i)=>{
                             if(i== 0 || i == 1 || i== 2){
                                 return null
