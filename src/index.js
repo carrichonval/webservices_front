@@ -33,6 +33,7 @@ import VideoGames from './components/categories/VideoGames';
 import Compatibility from './components/Compatibility'
 
 import PrivateRoute from "./components/SpecialRoutes/PrivateRoute"
+import User from './components/categories/User';
 
 
 const customHistory = createBrowserHistory()
@@ -40,7 +41,7 @@ const customHistory = createBrowserHistory()
 const routing = ( 
   <Router history={customHistory}>
     <Header/>
-      <Switch>
+        <Switch>
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
 
@@ -60,8 +61,8 @@ const routing = (
             <Route exact path="/users" component={Users} />
             <Route exact path="/videoGames" component={VideoGames} />
             <PrivateRoute exact path="/compatibility" component={Compatibility} />
-
-          </Switch>
+            <Route exact path="/users/:id" component={User} />
+        </Switch>
   </Router>
 )
 
