@@ -30,6 +30,9 @@ import Regions from './components/categories/Regions';
 import Sports from './components/categories/Sports';
 import Users from './components/categories/Users';
 import VideoGames from './components/categories/VideoGames';
+import Compatibility from './components/Compatibility'
+
+import PrivateRoute from "./components/SpecialRoutes/PrivateRoute"
 
 
 const customHistory = createBrowserHistory()
@@ -56,6 +59,7 @@ const routing = (
             <Route exact path="/sports" component={Sports} />
             <Route exact path="/users" component={Users} />
             <Route exact path="/videoGames" component={VideoGames} />
+            <PrivateRoute exact path="/compatibility" component={Compatibility} />
 
           </Switch>
   </Router>
