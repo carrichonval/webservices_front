@@ -106,7 +106,7 @@ export default function User (props) {
                                         <li class="pl-3 pr-4 py-3 flex items-center justify-between text-sm flex-col w-full">
                                             <div class="flex items-center">
                                                 <span class="ml-2 truncate">
-                                                    {car.name} - <small class="text-sm font-medium text-gray-500">{car.brand}</small>
+                                                    {car.name} - <small class="text-sm">{car.brand}</small>
                                                 </span>
                                             </div>
                                         </li>
